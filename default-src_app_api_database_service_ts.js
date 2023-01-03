@@ -126,6 +126,7 @@ let UserService = class UserService {
         xhr.open("POST", this.standardUrl + "/check-login");
         xhr.setRequestHeader("Accept", "application/json");
         xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
         xhr.onload = () => this.decideStartup(xhr.responseText);
         let data = {
             "access_token": jwt
