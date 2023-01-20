@@ -119,14 +119,14 @@ let UserService = class UserService {
         this.coachFilterOpt = '';
         /* https://inchange-backend.herokuapp.com  */
         /*  */
-        this.standardUrl = 'http://localhost:3000';
+        //standardUrl: any = 'http://localhost:3000';
+        this.standardUrl = 'https://inchange-app.com/';
     }
     checkLogin(jwt) {
         let xhr = new XMLHttpRequest();
         xhr.open("POST", this.standardUrl + "/check-login");
         xhr.setRequestHeader("Accept", "application/json");
         xhr.setRequestHeader("Content-Type", "application/json");
-        xhr.setRequestHeader("Access-Control-Allow-Credentials", "true");
         xhr.onload = () => this.decideStartup(xhr.responseText);
         let data = {
             "access_token": jwt

@@ -866,12 +866,14 @@ let CreateAdvertisementComponent = class CreateAdvertisementComponent {
             console.log(reader.result);
             this.DatabaseService.img = reader.result;
             this.insertImage(reader.result);
-            window.open("http://localhost:3000/crop-test.html", '_blank');
+            //window.open("http://localhost:3000/crop-test.html", '_blank');
+            window.open("https://inchange-app.com/crop-test.html", '_blank');
         };
     }
     insertImage(img) {
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://localhost:3000/insert_image");
+        //xhr.open("POST", "http://localhost:3000/insert_image");
+        xhr.open("POST", "https://inchange-app.com/insert_image");
         xhr.setRequestHeader("Accept", "application/json");
         xhr.setRequestHeader("Content-Type", "application/json");
         xhr.onload = () => this.insertImageCallback(xhr.responseText);
@@ -1659,7 +1661,7 @@ module.exports = "<ion-header style=\"margin-bottom: 20px;\">\r\n  <ion-toolbar>
   \*************************************************************************************/
 /***/ ((module) => {
 
-module.exports = "<ion-header style=\"margin-bottom: 20px;\">\r\n  <ion-toolbar>\r\n    <ion-title>Advertisement</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<div style=\"width: 500px; margin-left: auto; margin-right: auto;\">\r\n\r\n  <ion-item>\r\n    <ion-label>Bezeichnung:</ion-label>\r\n    <ion-input [(ngModel)]=\"this.AdvertiseName\" placeholder=\"...\"></ion-input>\r\n  </ion-item>\r\n\r\n  <ion-item>\r\n    <input type=\"file\" name=\"avatar\" accept=\"image/png, image/jpeg\" (change)=\"handleUpload($event)\">\r\n  </ion-item>\r\n\r\n</div>\r\n\r\n\r\n  <iframe style=\"width: 80%; height: 70%;\" src=\"http://localhost:3000/crop-test.html\" title=\"W3Schools Free Online Web Tutorials\"></iframe>\r\n\r\n\r\n\r\n<div style=\"width: 500px; margin-left: auto; margin-right: auto;\">\r\n\r\n  <ion-item (click)=\"showDatepickerFrom()\">\r\n    <ion-label position=\"stacked\">Beginn</ion-label>\r\n    <ion-input readonly>{{ this.DatabaseService.startDate }}</ion-input>\r\n  </ion-item>\r\n\r\n  <ion-item (click)=\"showDatepickerTo()\">\r\n    <ion-label position=\"stacked\">Ende</ion-label>\r\n    <ion-input readonly>{{ this.DatabaseService.endDate }}</ion-input>\r\n  </ion-item>\r\n\r\n  <ion-button style=\"margin: 5% 10%;\" color=\"primary\" (click)=\"set()\" expand=\"block\">Speichern</ion-button>\r\n\r\n</div>";
+module.exports = "<ion-header style=\"margin-bottom: 20px;\">\r\n  <ion-toolbar>\r\n    <ion-title>Advertisement</ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<div style=\"width: 500px; margin-left: auto; margin-right: auto;\">\r\n\r\n  <ion-item>\r\n    <ion-label>Bezeichnung:</ion-label>\r\n    <ion-input [(ngModel)]=\"this.AdvertiseName\" placeholder=\"...\"></ion-input>\r\n  </ion-item>\r\n\r\n  <ion-item>\r\n    <input type=\"file\" name=\"avatar\" accept=\"image/png, image/jpeg\" (change)=\"handleUpload($event)\">\r\n  </ion-item>\r\n\r\n</div>\r\n\r\n\r\n  <!-- <iframe style=\"width: 80%; height: 70%;\" src=\"http://localhost:3000/crop-test.html\" title=\"W3Schools Free Online Web Tutorials\"></iframe> -->\r\n  <iframe style=\"width: 80%; height: 70%;\" src=\"https://inchange-app.com/crop-test.html\" title=\"W3Schools Free Online Web Tutorials\"></iframe>\r\n\r\n\r\n\r\n<div style=\"width: 500px; margin-left: auto; margin-right: auto;\">\r\n\r\n  <ion-item (click)=\"showDatepickerFrom()\">\r\n    <ion-label position=\"stacked\">Beginn</ion-label>\r\n    <ion-input readonly>{{ this.DatabaseService.startDate }}</ion-input>\r\n  </ion-item>\r\n\r\n  <ion-item (click)=\"showDatepickerTo()\">\r\n    <ion-label position=\"stacked\">Ende</ion-label>\r\n    <ion-input readonly>{{ this.DatabaseService.endDate }}</ion-input>\r\n  </ion-item>\r\n\r\n  <ion-button style=\"margin: 5% 10%;\" color=\"primary\" (click)=\"set()\" expand=\"block\">Speichern</ion-button>\r\n\r\n</div>";
 
 /***/ }),
 
